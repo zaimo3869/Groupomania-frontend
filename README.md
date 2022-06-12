@@ -1,6 +1,6 @@
 # GroupomaniaFrontend
 
-Apres avoir installer et configurer le repo back
+Apres avoir installer et configurer le repo back (https://github.com/zaimo3869/Groupomania-Backend)
 
 Creer un dossier front où installer ce repo
 
