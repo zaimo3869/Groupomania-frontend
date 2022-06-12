@@ -3,8 +3,6 @@ import PostService from '../service/post.service';
 
 
 
-  let testNumber = /^[a-zA-Z-\s]*$/;
-
 export default class ModifyPost extends Component {
  
     
@@ -43,11 +41,10 @@ export default class ModifyPost extends Component {
     let id = baseURL.substring(baseURL.lastIndexOf('/')+1)
     PostService.getOnePost({id:id}).then((res) => {
       this.setState({
-        post:res.data,
         titre: res.data[0].title,
         name: res.data[0].name,
         photo:res.data[0].image_url,
-        message: res.data[0].message}).then((res)=> {console.log(res)})
+        message: res.data[0].message})
    })
 
 }
@@ -83,24 +80,18 @@ handleChangeFile = event => {
     
     render() {
       const post = [this.state.post]
-      console.log(this.state)
       return (
         <form className='Signup' style={{minHeight:"700px"}} onSubmit={this.handleSubmit}>
             <h1>Modifier votre post !</h1>
             <div className='inputDiv'>
-           !{post.title}!
+              
             <label >titre</label>
-            <input name="titre" placeholder={post.title} value={this.state.titre} onChange={this.handleChange} />
+            <input name="titre" value={this.state.titre} onChange={this.handleChange} />
             <div style={{ fontSize: 12, color: "red" }}>
               {this.state.prenomError}
             </div>
 
-            <label >nom</label>
-            <input name="name" placeholder={post.name} value={this.state.name} onChange={this.handleChange} />
-            <div style={{ fontSize: 12, color: "red" }}>
-              {this.state.nameError}
-            </div>
-
+           
             <label >Photo</label>
             <input type="file" name="image" placeholder={post.title} onChange={this.handleChangeFile} />
             <div style={{ fontSize: 12, color: "red" }}>
@@ -108,11 +99,11 @@ handleChangeFile = event => {
             </div>
 
           <label >Massage</label>
-            <input name="message" placeholder={post.title} value={this.state.message} onChange={this.handleChange}/>
+            <input name="message"  value={this.state.message} onChange={this.handleChange}/>
             <div style={{ fontSize: 12, color: "red" }}>
               {this.state.emailError}
             </div>
-            {/* <button onClick={this.local}>clique</button> */}
+        
           <button type="submit">submit</button>
             </div>
         </form>
