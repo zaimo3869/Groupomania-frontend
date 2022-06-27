@@ -12,4 +12,5 @@ Attendez un instant et le site s'ouvrira sur la page d'inscription
 
 Bienvenu sur le frontend du site Groupomania ( réseaux sociale d'entreprise)
 
-Le Front est développer grace a React.
+Le Front est développer grace a React.![image](https://user-images.githubusercontent.com/77543340/175906720-8df1a951-30a4-45ca-b009-fc23506cad4c.png)
+
